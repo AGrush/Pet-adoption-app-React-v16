@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@reach/router": "^1.1.1",
+    "lodash": "^4.17.11",
     "petfinder-client": "^0.0.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
