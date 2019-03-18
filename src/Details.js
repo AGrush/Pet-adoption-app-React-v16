@@ -1,6 +1,6 @@
 import React from "react";
 import pf from "petfinder-client";
-import { navigate } from "@reach/router";
+import { Redirect } from "react-router";
 import Carousel from "./Carousel";
 import Modal from "./Modal";
 
@@ -41,7 +41,7 @@ class Details extends React.Component {
         });
       })
       .catch(() => {
-        navigate("/");
+        this.props.history.push("/");
       });
   }
   toggleModal = () => this.setState({ showModal: !this.state.showModal });

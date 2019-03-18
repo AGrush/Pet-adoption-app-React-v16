@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Router, Link } from "@reach/router";
+import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
 import pf from "petfinder-client";
 import { Provider } from "./SearchContext";
 import Results from "./Results";
@@ -72,23 +72,25 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
-        <header>
-          <Link to="/">Adopt Me!</Link>
-          <Link to="/search-params">
-            <span aria-label="search" role="img">
-              :) Search
-            </span>
-          </Link>
-        </header>
-        <Provider value={this.state}>
-          <Router>
-            <Results path="/" />
-            <Details path="/details/:id" />
-            <SearchParams path="/search-params" />
-          </Router>
-        </Provider>
-      </div>
+      <BrowserRouter>
+        <div>
+          <header>
+            <NavLink to="/">Adopt Me!</NavLink>
+            <NavLink to="/search-params">
+              <span aria-label="search" role="img">
+                Search
+              </span>
+            </NavLink>
+          </header>
+          <Provider value={this.state}>
+            <Switch>
+              <Route component={Results} path="/" exact />
+              <Route component={Details} path="/details/:id" />
+              <Route component={SearchParams} path="/search-params" />
+            </Switch>
+          </Provider>
+        </div>
+      </BrowserRouter>
     );
   }
 }

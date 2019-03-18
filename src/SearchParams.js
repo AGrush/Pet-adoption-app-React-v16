@@ -1,11 +1,11 @@
 import React from "react";
 import SearchBox from "./SearchBox";
-import { navigate } from "@reach/router";
+import { withRouter } from "react-router-dom";
 
 class SearchParams extends React.Component {
-  handleSearchSubmit() {
-    navigate("/");
-  }
+  handleSearchSubmit = () => {
+    this.props.history.push("/");
+  };
   render() {
     return (
       <div className="search-route">
