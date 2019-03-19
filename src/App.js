@@ -72,7 +72,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="/react/petadoption">
         <div>
           <header>
             <NavLink to="/">Adopt Me!</NavLink>

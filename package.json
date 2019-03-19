@@ -1,6 +1,6 @@
 {
   "name": "adopt-me",
-  "homepage": ".",
+  "homepage": "https://agwebdesign.net/react/petadoption/",
   "version": "1.0.0",
   "description": "Rescued animals API",
   "main": "src/App.js",
